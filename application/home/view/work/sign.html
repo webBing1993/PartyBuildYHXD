@@ -139,7 +139,7 @@
 		<li data-num="{$vo.id}" onclick="window.location.href='main?id={$vo.id}'; $(this).css('backgroundColor','#eee');" class="clearfix" >
 			<b style=' background-image:url({$vo.front_cover|get_cover="path"})'></b>
 			<p>{$vo.title}</p>
-			<span>{$vo.meet|date="Y-m-d H:i",###}</span>
+			<span>{$vo.meet_time|date="Y-m-d H:i",###}</span>
 		</li>
 		{/volist}
 		{/empty}
