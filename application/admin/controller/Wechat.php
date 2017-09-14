@@ -120,6 +120,9 @@ class Wechat extends Admin
                             case "党员荣誉":
                                 $user['honor'] = $value['value'];
                                 break;
+                            case "人物故事":
+                                $user['story'] = $value['value'];
+                                break;
                             default:
                                 break;
                         }
