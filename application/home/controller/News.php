@@ -12,6 +12,7 @@ use app\home\model\Comment;
 use app\home\model\Like;
 use app\home\model\Browse;
 use app\home\model\WechatUser;
+use app\home\model\WechatUserTag;
 
 
 class News extends Base
@@ -242,6 +243,7 @@ class News extends Base
         if (IS_POST) {
 
             $uid = session('userId');
+
             $data = input('post.');
             $newsModel = new NewsModel();
             $data['publisher'] = get_name($uid);
@@ -273,11 +275,20 @@ class News extends Base
 
         } else {
 
+            $uid = session('userId');
             $data = input('get.');
+            $this ->checkAnonymous();
             if ($data['type'] == 1) {
                 $type = ($data['tab_type'] == 1?1:2);
             } else if ($data['type'] == 4) {
                 $type = ($data['tab_type'] == 1?9:10);
+                if ($data['tab_type'] == 2) {
+                    $res = WechatUserTag::where(['userid'=>$uid ,'tagid'=>2])->find();
+                    if (empty($res)) {
+                        return $this->error('抱歉,您没有支部风采发布权限!');
+                    }
+                }
+
             } else if ($data['type'] == 2) {
                 if ($data['tab_type'] == 1) {
                     $type = 3;
