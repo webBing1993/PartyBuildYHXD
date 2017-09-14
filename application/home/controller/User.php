@@ -182,7 +182,6 @@ class User extends Base {
 
             $res = Db::field('title,create_time,music_path as table_type,user_type,id,front_cover') // 利用不存在值,判断两张表
             ->table('pb_learn')
-                ->union("SELECT title,create_time,table_type,user_type,id,front_cover FROM pb_news where create_user=$uid order by create_time desc limit $len,7")
                 ->where('create_user',$uid)
                 ->order('create_time desc')
                 ->limit("$len,7")

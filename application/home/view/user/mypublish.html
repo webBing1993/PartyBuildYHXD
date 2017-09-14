@@ -4,6 +4,24 @@
 <title>我的发布</title>
 <link rel="stylesheet" href="/home/css/news/news.css">
 <link rel="stylesheet" href="/home/css/common/rem.css">
+<style>
+    .list img {
+        display: inline-block;
+        width: 24vw;
+        height: 16vw;
+        margin-top: 4vw;
+    }
+    .list img+span{
+        position: absolute;
+        left: 4vw;
+        width: 24vw;
+        bottom: 4vw;
+        text-align: center;
+        color: #fff;
+        font-size: 1.4rem;
+        line-height: 8vw;
+    }
+</style>
 {/block}
 
 {block name="body"}
@@ -26,6 +44,12 @@
                 {else/}
                 <img src="{$vo['front_cover']|get_cover='path'}" alt="{$vo.title}">
                 {/empty}
+                {empty name="vo.table_type"}
+                <span>体悟反思</span>
+                {else/}
+                <span>{vo.table_type==1?党建动态:品牌同创}</span>
+                {/empty}
+
             </div>
             <div class="fr lr">
                 <div class="title limit_">{$vo.title}</div>
@@ -110,7 +134,14 @@
             var list = lists[i];
             if (list['table_type']) {
                 link = "/home/news/detail/id/"+list.id+".html";
+                if (list['table_type'] == 1) {
+                    span = '党建之家';
+                } else {
+                    span = '品牌同创';
+                }
+
             } else {
+                span = '体悟反思';
                 link = "/home/topic/detail/id/"+list.id+".html";
             }
 
@@ -118,6 +149,7 @@
                     '<a class="list clear" href="'+link+'">'+
                     '<div class="fl">'+
                     '<img src="'+ list.path+'" alt="图片">'+
+                     '<span>'+span+'</span>'+
                     '</div>'+
                     '<div class="fr lr">'+
                     '<div class="title">'+list.title+'</div>'+
