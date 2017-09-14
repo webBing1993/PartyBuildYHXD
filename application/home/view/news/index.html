@@ -75,7 +75,7 @@
 	{else/}
 	<div class="lists">
 		{volist name="list1" id="vo"}
-		<a class="list clear" href="{:Url('News/detail?id='.$vo['id'])}">
+		<a class="list clear" href="{:Url('News/detail?id='.$vo['id'].'&type='.$type)}">
 			<div class="fl">
 				<img src="{$vo['front_cover']|get_cover='path'}" alt="{$vo.title}">
 			</div>
@@ -259,7 +259,7 @@ function addNews(data,type){
 	for(var i = 0; i< len;i++){
 		var list = lists[i];
 		html +=
-				'<a class="list clear" href="/home/news/detail/id/'+list.id+'.html">'+
+				'<a class="list clear" href="/home/news/detail/id/'+list.id+'/type/{$type}.html">'+
 				'<div class="fl">'+
 				'<img src="'+ list.src+'" alt="图片">'+
 				'</div>'+

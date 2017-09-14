@@ -1,7 +1,17 @@
 {extend name="public/common"}
 
 {block name="style"}
-
+<title>
+	{if condition="($type==1)" }
+	党建时讯
+	{elseif condition="($type==2)"/}
+	校园动态
+	{elseif condition="($type==3)"/}
+	先锋服务
+	{elseif condition="($type==4)"/}
+	先锋榜样
+	{/if}
+</title>
 <link rel="stylesheet" href="/home/css/common/detail.css">
 <link rel="stylesheet" href="/home/css/common/rem.css">
 <style>

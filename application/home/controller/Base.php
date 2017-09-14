@@ -20,7 +20,7 @@ use think\Db;
 class Base extends Controller {
     public function _initialize(){
 //        session('userId','visitor');
-        session('userId','15700004138'); //管理员权限跟支部数据权限
+        session('userId','15558023165'); //管理员权限跟支部数据权限
 //        session('userId','15757116500');
 //        session('header','/home/images/vistor.jpg');
 //        session('nickname','游客');

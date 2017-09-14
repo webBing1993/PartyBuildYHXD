@@ -174,12 +174,13 @@ class News extends Base
         $this ->anonymous();
         $userId = session('userId');
         $id = input('get.id');
-        if(!empty($id))
-        {
+        $type = input('get.type');
+        if(!empty($id)) {
+
             $map = array('id' => $id,'status' => ['egt',0]);
             $res = NewsModel::where($map) ->find();
-            if (empty($res))
-            {
+            if (empty($res)) {
+
                 return $this->error('该文章不存在或已删除!');
             }else{
                 $news = new NewsModel();
@@ -187,7 +188,7 @@ class News extends Base
                 $info['views'] = array('exp','`views`+1');
                 $news::where('id',$id)->update($info);
 
-                if($userId != "visitor"){
+                if ($userId != "visitor") {
                     //浏览不存在则存入pb_browse表
                     $con = array(
                         'user_id' => $userId,
@@ -221,6 +222,8 @@ class News extends Base
                 $commentModel = new Comment();
                 $comment = $commentModel->getComment(2,$id,$userId);
                 $this->assign('comment',$comment);
+                $this->assign('type',$type);
+
                 return $this->fetch();
             }
 
