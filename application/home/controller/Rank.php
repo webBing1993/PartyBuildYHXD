@@ -26,7 +26,7 @@ class Rank extends Base {
     public function integral(){
 
         $this->anonymous();
-
+        $this ->checkAnonymous();
         $wechatModel = new WechatUser();
         $userId = session('userId');
         //所在部门名称

@@ -23,6 +23,7 @@ class Constitution extends Base {
      */
     public function rank(){
         $this->anonymous();
+        $this ->checkAnonymous();
         $type = input('type');  //获取类型，1为常规模式排行 2为互动模式排行
 
         $wechatModel = new WechatUser();
@@ -68,6 +69,7 @@ class Constitution extends Base {
      */
     public function game(){
         //获取该用户的的信息
+        $this ->checkAnonymous();
         $users=$users=session('userId');
         $info = Answer::get(['userid'=>$users]);
         if($info) {
@@ -86,6 +88,7 @@ class Constitution extends Base {
      * 答题页面
      */
     public function answer(){
+        $this ->checkAnonymous();
         //取单选
         $arr=Question::all(['type'=>0]);
         foreach($arr as $value){
