@@ -39,7 +39,7 @@ class Comment extends Model {
         foreach ($comment as $value) {
             $user = WechatUser::where('userid',$value['uid'])->find();
             $value['nickname'] = $user['name'];
-            $value['header'] = $user['avatar'];
+            $value['header'] = ($user['header']) ? $user['header'] : $user['avatar'];
             $map1 = array(
                 'type' => 0,
                 'aid' => $value['id'],

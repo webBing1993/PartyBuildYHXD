@@ -296,7 +296,7 @@ class Base extends Controller {
             foreach ($comment as $value) {
                 $user = WechatUser::where('userid',$value['uid'])->find();
                 $value['nickname'] = $user['name'];
-                $value['header'] = $user['avatar'];
+                $value['header'] = ($user['header']) ? $user['header'] : $user['avatar'];
                 $value['time'] = date('Y-m-d',$value['create_time']);
                 $value['content'] = strtr($value['content'], $badword1);
                 $map1 = array(
