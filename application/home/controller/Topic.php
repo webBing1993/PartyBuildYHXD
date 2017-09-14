@@ -39,11 +39,14 @@ class Topic extends Base{
         );
         $list = Learn::where($map)->order('id desc')->limit($len,5)->select();
         foreach($list as $k=>$v){
-            $img = Picture::get($v['front_cover']);
-            if (empty($img)) {
-                $img['path'] = get_defalut_cover(1); //1 Learn
+
+            if (!$v['front_cover']) {
+                $img = get_defalut_cover(1); //1 Learn
+            } else {
+                $img = Picture::get($v['front_cover']);
+                $img = get_cover($img['path']);
             }
-            $list[$k]['src'] = $img['path'];
+            $list[$k]['src'] = $img;
             $list[$k]['time'] = date("Y-m-d",$v['create_time']);
         }
         if($list){

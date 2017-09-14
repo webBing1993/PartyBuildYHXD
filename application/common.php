@@ -183,7 +183,7 @@ function get_defalut_cover($type)
 {
     switch ($type) {
         case 1:
-            return "/uploads/download/2017-08-22/599bd44c541d5.jpg";
+            return "/home/images/common/topic.jpeg";
             break;
         default:
             return "";

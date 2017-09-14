@@ -211,7 +211,7 @@ function loadScroll(type){
 		console.log(len);
 		var tip = $(".tip");
 		var loading = $('.loading');
-		if(dh == end){
+		if(dh == end && scrollNow){
 			scrollNow = false;
 			$.ajax({
 				type:"post",

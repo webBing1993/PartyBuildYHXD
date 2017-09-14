@@ -82,7 +82,7 @@ class News extends Base
     {
         $map = ['status' => ['egt',0]];
         $map['type'] = $type;
-        $res = NewsModel::where($map)->limit($limit,7)->select();
+        $res = NewsModel::where($map)->order('create_time desc')->limit($limit,7)->select();
 
         return $res;
     }
