@@ -35,6 +35,17 @@ body {
   color: #999999;
   font-size: 1.46rem;
 }
+.lists .list .personal_say {
+  width: 50vw;
+  text-align: right;
+  display: inline-block;
+}
+.lists .list .personal_say span {
+  text-align: left;
+  display: inline-block;
+  line-height: 8vw;
+  padding: 3vw 0;
+}
 .lists .list:last-child {
   border-bottom: 0.27vw solid #f1f1f1;
 }

@@ -50,14 +50,9 @@
 		<span class="fl">党龄</span>
 		<span class="fr">{$user.partytime|get_partyAge}</span>
 	</div>
-</div>
-<div class="personal_title">
-	<div class="title_title">
-		<div class="title_img"><img src="/home/images/structure/icon_5.png" alt=""></div>
-		一句话承诺
-	</div>
-	<div class="title_content">
-		<p>{$user.promise?$user.promise:'暂无'}</p>
+	<div class="list clear">
+		<span class="fl">一句话承诺</span>
+		<span class="fr personal_say"><span>{$user.promise?$user.promise:'暂无'}</span></span>
 	</div>
 </div>
 <!-- 二维码 -->
@@ -81,6 +76,7 @@
 <script src="/static/code/jquery.qrcode.min.js"></script>
 <script>
 $(function(){
+	$(".lists .list .personal_say").prev("span.fl").css("lineHeight",$(".lists .list .personal_say").height() + "px");
 	//模块标题
 	$('.toshow' ).on('click',function(){
 		$('#model').modal('show');

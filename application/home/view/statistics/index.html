@@ -47,7 +47,7 @@
 				{empty name="vo.table_type"}
 				<span>体悟反思</span>
 				{else/}
-				<span>{vo.table_type==1?党建动态:品牌同创}</span>
+				<span>{$vo.table_type==1?'党建动态':'品牌同创'}</span>
 				{/empty}
 			</div>
 			<div class="fr lr">
