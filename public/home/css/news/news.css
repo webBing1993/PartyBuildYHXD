@@ -68,7 +68,7 @@
 	width: 67vw;
 }
 .list .lr .title{
-	width: 100%;
+	/*width: 100%;*/
 	font-size: 1.4rem;
 	margin-top: 4vw;
 	margin-bottom: 2.1333vw;
@@ -78,7 +78,7 @@
 .list .lr .clear{
 	font-size: 1.2rem;
 	color:#999999;
-	position: absolute;
+	/*position: absolute;*/
 	bottom: 4vw;
 	width: 65.5vw;
 	margin-left: 2vw;

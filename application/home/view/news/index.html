@@ -98,7 +98,7 @@
 	{else/}
 	<div class="lists">
 		{volist name="list2" id="vo"}
-		<a class="list clear" href="{:Url('News/detail?id='.$vo['id'])}">
+		<a class="list clear" href="{:Url('News/detail?id='.$vo['id'].'&type='.$type)}">
 			<div class="fl">
 				<img src="{$vo['front_cover']|get_cover='path'}" alt="{$vo.title}" >
 			</div>
@@ -121,7 +121,7 @@
 	{else/}
 	<div class="lists">
 		{volist name="list3" id="vo"}
-		<a class="list clear" href="{:Url('News/detail?id='.$vo['id'])}">
+		<a class="list clear" href="{:Url('News/detail?id='.$vo['id'].'&type='.$type)}">
 			<div class="fl">
 				<img src="{$vo['front_cover']|get_cover='path'}" alt="{$vo.title}">
 			</div>
@@ -264,7 +264,7 @@ function addNews(data,type){
 				'<img src="'+ list.src+'" alt="图片">'+
 				'</div>'+
 				'<div class="fr lr">'+
-				'<div class="title">'+list.title+'</div>'+
+				'<div class="title limit_">'+list.title+'</div>'+
 				'<div class="clear">'+
 				'<span class="fl">'+ list.time+'</span>'+
 				'<span class="fr">详情</span>'+
