@@ -108,19 +108,20 @@ body {
 }
 .personal_img {
     position: absolute;
-    width: 30vw;
-    height: 30vw;
+    width: 26vw;
+    height: 26vw;
     border-radius: 50%;
-    /*background-color: #d7d7d7;*/
     left: 50%;
-    top: 50%;
-    margin-left: -15vw;
-    margin-top: -15vw;
+    top: -40%;
+    margin-left: -13vw;
+    /*margin-top: -15vw;*/
     text-align: center;
-    line-height: 30vw;
+    line-height: 26vw;
     color: #666;
-    font-size: 15vw;
+    font-size: 14vw;
     z-index: 10;
+    padding: 1px;
+    border: 2px solid #fff;
 }
 .personal_container {
     position: absolute;
@@ -133,10 +134,14 @@ body {
     border-radius: 2vw;
     background-color: #ffffff;
     width: 86vw;
-    margin-bottom: 6vw;
+    margin-bottom: 5.4vw;
+    position: relative;
+}
+.personal_container>div:first-of-type {
+    box-shadow: -0.5px -0.5px 0.5px #d7d7d7;
 }
 .personal_info .info_name {
-    padding: 18vw 0 6vw 0;
+    padding: 14vw 0 3.5vw 0;
     text-align: center;
     font-size: 1.7rem;
     color: #333;
@@ -154,7 +159,7 @@ body {
 }
 .personal_info .info_content>div.fl .info_img {
     width: 5.5vw;
-    height: 6vw;
+    height: 5.6vw;
     margin-right: 3vw;
 }
 .personal_info .info_content>div.fl .info_img img{
@@ -162,27 +167,32 @@ body {
     height: 100%;
 }
 .personal_title .title_title,
-.personal_honer .honer_title {
+.personal_honer .honer_title,
+.personal_story .story_title{
     padding: 6vw 0;
     color: #333333;
     font-size: 1.64rem;
-    text-align: center;
+    /*text-align: center;*/
     line-height: 5vw;
 }
 .personal_title .title_title>div.title_img,
-.personal_honer .honer_title .honer_img {
+.personal_honer .honer_title .honer_img,
+.personal_story .story_title .story_img{
     display: inline-block;
     width: 4vw;
-    height: 5vw;
+    height: 4.6vw;
     margin-right: 3vw;
+    margin-left: 36%;
 }
 .personal_title .title_title .title_img img,
-.personal_honer .honer_title .honer_img img {
+.personal_honer .honer_title .honer_img img,
+.personal_story .story_title .story_img img {
     width: 100%;
     height: 100%;
 }
 .personal_title .title_content,
-.personal_honer .honer_content {
+.personal_honer .honer_content,
+.personal_story .story_content {
     margin: 0 auto;
     width: 100%;
     padding: 0 4%;
@@ -195,7 +205,8 @@ body {
     display: inline-block;
 }
 .personal_title .title_content p,
-.personal_honer .honer_content p {
+.personal_honer .honer_content p,
+.personal_story .story_content p {
     text-align: left;
     width: auto;
     display: inline-block;

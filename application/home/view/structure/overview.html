@@ -10,7 +10,6 @@
 {block name="body"}
 <div class="banner">
     <img src="/home/images/banner/11.jpg" alt="党员信息banner" class="banner-img">
-    <div class="personal_img" style="background-color: {:get_rand_color()}"><span>{:substr($user.name,0,3)}</span></div>
 </div>
 <div class="personal_container">
     <div class="personal_info clearfix">
@@ -25,6 +24,7 @@
                 <div class="info_rank">{$user.education?$user.education:'暂无'}</div>
             </div>
         </div>
+        <div class="personal_img" style="background-color: {:get_rand_color()}"><span>{:substr($user.name,0,3)}</span></div>
     </div>
     <div class="personal_title">
         <div class="title_title">
@@ -41,6 +41,15 @@
             党员荣誉
         </div>
         <div class="honer_content">
+            <p>{$user.honor?$user.honor:'暂无'}</p>
+        </div>
+    </div>
+    <div class="personal_story">
+        <div class="story_title">
+            <div class="story_img"><img src="/home/images/structure/icon_7.png" alt=""></div>
+            人物故事
+        </div>
+        <div class="story_content">
             <p>{$user.honor?$user.honor:'暂无'}</p>
         </div>
     </div>
