@@ -44,7 +44,8 @@ class Topic extends Base{
                 $img = get_defalut_cover(1); //1 Learn
             } else {
                 $img = Picture::get($v['front_cover']);
-                $img = get_cover($img['path']);
+
+                $img = $img['path'];
             }
             $list[$k]['src'] = $img;
             $list[$k]['time'] = date("Y-m-d",$v['create_time']);
