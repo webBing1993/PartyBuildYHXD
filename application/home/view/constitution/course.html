@@ -44,13 +44,13 @@ $(function(){
 	//模块标题
 	$('title' ).text('两学一做');
 	//提交
-	$('.submit').on('click',function(e){
+	$('.submit').one('click',function(e){
 		var data = [];
 		$('.list').each(function(){
 			var id = $(this ).attr('data-tab');
 			var answer = $(this ).find('.checked' ).index();
 			data.push([id,answer]);
-			});
+		});
 //		console.log(data);
 //		$('#modal').modal('show');
 		$.ajax({
@@ -62,8 +62,10 @@ $(function(){
 				$('#true1').html('<br>1.'+data.url.right[1]+'，2.'+data.url.right[2]+'，3.'+data.url.right[3]);
 				var link='scan';
 				$('#link').attr('href',link+'/id/'+data.url.id);
+				$('.submit').attr('data-target','');
 			}
 		});
+
 	});
 	//选中样式变化
 	$('label').on('click',function(e){
