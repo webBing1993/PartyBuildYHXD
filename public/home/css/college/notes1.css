@@ -1,0 +1,112 @@
+body {
+  background: #f9f9f9;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #d9d9d9!important;
+}
+.form .list {
+  height: 12vw;
+  width: 100%;
+  padding-left: 3.4vw;
+  padding-right: 3.4vw;
+  border-bottom: 1px solid #f1f1f1;
+  background: #ffffff;
+  line-height: 12vh;
+  zoom: 1;
+}
+.form .list：after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.form .list:last-child {
+  border-bottom: none;
+}
+.form .list span {
+  width : 23.2vw;
+  text-align: center;
+  float: left;
+  color: #333333;
+  font-size: 1.5rem;
+  line-height: 12vw;
+}
+.form .list input,
+.form .list .select,
+.form .list .time {
+  float: right;
+  width: 70vw;
+  color: #999;
+}
+.form .list input {
+  height : 12vw;
+  font-size: 1.3rem;
+}
+.form .list input::-webkit-input-placeholder{
+  /*line-height: 12vw;*/
+}
+.form .list .select {
+  color: #d9d9d9;
+}
+.block {
+  background: #ffffff;
+  margin-top: 2.6vw;
+  padding-bottom: 2.6vw;
+}
+.block #text {
+  width: 100%;
+  padding: 3.4vw;
+  min-height: 100px;
+  margin-top: 2.6vw;
+  color: #999999;
+  font-size: 1.3rem;
+  /*text-indent: 2em;*/
+}
+.block .img {
+  position: relative;
+  width: 20.8vw;
+  height: 20.8vw;
+  margin-left: 2.6vw;
+  overflow: hidden;
+  background: #d9d9d9;
+  border: 2px solid #d9d9d9;
+  box-sizing: content-box;
+}
+.block .img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.block .add {
+  width: 20.8vw;
+  height: 20.8vw;
+  margin-left: 2.6vw;
+  border: 0.534vw solid #d9d9d9;
+  text-align: center;
+  line-height: 20.8vw;
+  font-size: 6rem;
+  color: #d9d9d9;
+  box-sizing: content-box;
+  background-image: url("/home/images/add.png");
+  background-size: 20.8vw 20.8vw;
+}
+.foot {
+  margin-top: 10vw;
+}
+.foot .save {
+  width: 60vw;
+  height: 10.6vw;
+  margin: 2.6666vw auto;
+  -webkit-border-radius: 1.6vw;
+  border-radius: 1.6vw;
+  border: 0.27vw solid #ff7d6c;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 10.6vw;
+}
+.foot .save {
+  background: #ff7d6c;
+  color: #ffffff;
+}
+
+
