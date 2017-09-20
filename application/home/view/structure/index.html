@@ -22,6 +22,7 @@
 			<div class="lists">
 				<!--第一层-->
 				{volist name="deparment" id="vo"}
+				{neq name="vo.name" value="之图测试"}
 				<div class="list clear">
 					<div class="party1">
 						<a href="{:Url('Structure/detail?party='.$vo.id)}">
@@ -34,6 +35,7 @@
 						</a>
 					</div>
 				</div>
+				{/neq}
 				{/volist}
 
 			</div>
