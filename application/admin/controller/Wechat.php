@@ -97,7 +97,7 @@ class Wechat extends Admin
                 if(isset($user['extattr'])){
                     foreach ($user['extattr']['attrs'] as $value) {
                         switch ($value['name']){
-                            case "出生日期":
+                            case "出生年月":
                                 $user['birthday'] = $value['value'];
                                 if(!empty($value['value'])) {
                                     $user['age'] = date("Y",time()) - substr($value['value'],0,4);
@@ -114,15 +114,15 @@ class Wechat extends Admin
                             case "入党时间":
                                 $user['partytime'] = $value['value'];
                                 break;
-                            case "党员承诺":
-                                $user['promise'] = $value['value'];
-                                break;
-                            case "党员荣誉":
-                                $user['honor'] = $value['value'];
-                                break;
-                            case "人物故事":
-                                $user['story'] = $value['value'];
-                                break;
+//                            case "党员承诺":
+//                                $user['promise'] = $value['value'];
+//                                break;
+//                            case "党员荣誉":
+//                                $user['honor'] = $value['value'];
+//                                break;
+//                            case "人物故事":
+//                                $user['story'] = $value['value'];
+//                                break;
                             default:
                                 break;
                         }

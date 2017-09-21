@@ -16,7 +16,7 @@ class Structure extends Base{
      */
     public function index()
     {
-        $department = WechatDepartment::where('parentid',1)->select();
+        $department = WechatDepartment::where('parentid',1)->order('id desc')->select();
         $this->assign('deparment',$department);
 
         return $this->fetch();
