@@ -564,3 +564,13 @@ body {
   font-size: 1.6rem;
   margin-right: 2.5vw;
 }
+.branch_history_lists .lists_r .content p {
+  display: inline-block;
+  color: #666;
+}
+.branch_history_lists .lists_r .content p:first-of-type {
+  color: #000;
+}
+.branch_history_lists .lists_r .content p:last-of-type {
+  text-indent: 2em;
+}
