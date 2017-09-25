@@ -433,9 +433,17 @@ body {
   border-radius: 1.6vw;
 }
 .d_name {
-  font-size: 1.64rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  width: 35vw;
+}
+.d_name span:only-child {
   line-height: 12vw;
+}
+.d_name span {
+  display: inline-block;
+  width: 100%;
+  line-height: 6vw;
 }
 .d_tel {
   line-height: 12vw;
@@ -563,14 +571,4 @@ body {
   display: inline-block;
   font-size: 1.6rem;
   margin-right: 2.5vw;
-}
-.branch_history_lists .lists_r .content p {
-  display: inline-block;
-  color: #666;
-}
-.branch_history_lists .lists_r .content p:first-of-type {
-  color: #000;
-}
-.branch_history_lists .lists_r .content p:last-of-type {
-  text-indent: 2em;
 }
