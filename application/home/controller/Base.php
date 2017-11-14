@@ -20,18 +20,16 @@ use think\Db;
 class Base extends Controller {
     public function _initialize(){
 //        session('userId','visitor');
-        session('userId','15558023165'); //管理员权限跟支部数据权限
+//        session('userId','15558023165'); //管理员权限跟支部数据权限
 //        session('userId','15757116500');
 //        session('header','/home/images/vistor.jpg');
 //        session('nickname','游客');
-        if(!empty($_SERVER['REQUEST_URI'])){
-            session('url',$_SERVER['REQUEST_URI']);
-        }
+        session('requestUri', 'http://'.$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]);
         $userId = session('userId');
-
         if(Config::get('WEB_SITE_CLOSE')){
             return $this->error('站点维护中，请稍后访问~');
         }
+
         //如果是游客的话默认userid为visitors
         if($userId == 'visitor'){
             session('nickname','游客');
